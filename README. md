@@ -1,0 +1,58 @@
+# On-chain SQL Journey – LEFT JOIN Case Study
+
+## Objective
+Identify Ethereum addresses that **received ETH but never sent ETH**.
+
+This analysis helps identify:
+- Protocol contracts
+- Treasury addresses
+- Router and infrastructure contracts
+
+---
+
+## Dataset
+- Source: `ethereum.transactions` (Dune Analytics)
+- Chain: Ethereum Mainnet
+
+---
+
+## SQL Concept Used
+**LEFT JOIN**
+
+We join:
+- All receivers (`to`)
+- Against all senders (`from`)
+
+And filter:
+- Addresses that appear as receivers
+- But never appear as senders
+
+---
+
+## Query Logic (High Level)
+1. Extract all unique sender addresses
+2. LEFT JOIN them against receiver addresses
+3. Keep rows where sender is `NULL`
+4. Count how many times each address received ETH
+
+---
+
+## Key Insight
+Most top results are **smart contracts**, not EOAs, such as:
+- Stablecoins (USDT, USDC)
+- DEX routers
+- Wrapped ETH contracts
+
+This confirms that **LEFT JOIN is effective for contract behavior analysis**.
+
+---
+
+## Tools
+- SQL (Dune / Trino)
+- GitHub for documentation
+
+---
+
+## Author
+Abdirahman Farah  
+(@farahonchain)
