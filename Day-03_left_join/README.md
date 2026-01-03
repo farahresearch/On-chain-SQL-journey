@@ -34,6 +34,20 @@ Why LEFT JOIN?
 4. Count how many times ETH was received
 
 ---
+### Dune Query
+https://dune.com/queries/6449862?utm_source=share&utm_medium=copy&utm_campaign=query
+
+### Key Insights
+
+1. These wallets **only appear as receivers (`to`)** and never as senders (`from`).
+2. This behavior is common for:
+   - Smart contracts
+   - Treasury wallets
+   - Long-term accumulation addresses
+3. A high `received_tx_count` with zero outgoing transactions suggests
+   **non-spending or programmatic wallets**, not retail traders.
+4. LEFT JOIN with `NULL` filtering is effective for detecting
+   **absence of behavior**, which is a powerful on-chain analysis technique.
 
 ### Status
 - ✅ Query written
