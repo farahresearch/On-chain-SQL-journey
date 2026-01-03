@@ -52,5 +52,5 @@ https://dune.com/queries/6449862?utm_source=share&utm_medium=copy&utm_campaign=q
 ### Status
 - ✅ Query written
 - ✅ Tested on Dune
-- ⏳ SQL file to be added
-- ⏳ Insights to be documented
+- ⏳ SQL file   added
+- ⏳ Insights  documented
